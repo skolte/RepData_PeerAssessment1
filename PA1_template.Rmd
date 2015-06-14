@@ -136,3 +136,5 @@ Finally, using the 'Lattice' package, we make a time series plot of type = "l". 
 # Create a lattice time series plot using the transformed data.
 xyplot( steps ~ interval | Weekdays, data = dtComplete, type ="l", xlab ="Interval", ylab="Number of Steps", layout = c(1,2))
 ```
+
+As can be seen in the plot above, there's fair amount of increased activity during the week days as compared to weekends.
