@@ -11,14 +11,6 @@ This section loads various packages needed by the following code to analyze and 
 
 ```r
 library(data.table)
-```
-
-```
-## data.table 1.9.4  For help type: ?data.table
-## *** NB: by=.EACHI is now explicit. See README to restore previous behaviour.
-```
-
-```r
 library(plyr)
 library(stringr)
 library(lattice)
