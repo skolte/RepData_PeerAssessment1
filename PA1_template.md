@@ -177,3 +177,5 @@ xyplot( steps ~ interval | Weekdays, data = dtComplete, type ="l", xlab ="Interv
 ```
 
 ![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
+
+As can be seen in the plot above, there's fair amount of increased activity during the week days as compared to weekends.
