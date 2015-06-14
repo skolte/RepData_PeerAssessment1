@@ -9,6 +9,12 @@ keep_md: true
 ## Loading and preprocessing the data
 This section loads various packages needed by the following code to analyze and process data in the 'active.csv' file. The data from this file is loaded into a data frame, and subsequently filtered as appropriate to present the data.
 ```{r, echo = TRUE}
+# This installs missing packages automatically.
+list.of.packages <- c("data.table", "plyr", "stringr", "lattice")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+# Load the packages that are used to analyze the data.
 library(data.table)
 library(plyr)
 library(stringr)
