@@ -69,7 +69,9 @@ cat("Mean Total Number of Steps : ", meanSteps, "\n", "Median Total Number of St
 ```
 
 ## What is the average daily activity pattern?
-Here, we make a time series plot of type = "l" using basic plot system. We use the 5-minute interval as X-axis and the average number of steps taken, averaged across all days as Y-axis. 
+Here, we make a time series plot of type = "l" using basic plot system. We use the 5-minute interval as X-axis and the average number of steps taken, averaged across all days as Y-axis.
+
+The average daily activity pattern is as shown in the plot below.
 
 ```r
 # X axis <- 5 minute intervals for one day (0-2400)
@@ -81,6 +83,8 @@ plot(dtMeanForInterval$interval, dtMeanForInterval$steps, type = "l", xlab = "5 
 ```
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
+
+Next, we find the 5-minute time interval that has maximum number of steps averaged across all days.
 
 ```r
 dtMaxSteps <- dtMeanForInterval[which.max(dtMeanForInterval$steps),]
@@ -134,7 +138,7 @@ dtImputedCompleteData <- aggregate(formula = steps ~ date, data = activityData, 
 hist(dtImputedCompleteData$steps, main="Histogram of Number of Steps Per Day Imputed NAs", xlab = "Number of Steps", ylab = "Number of Days")
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
 Next, we calculate the mean and median total number of steps taken per day similar to what we did earlier. As we can see, these values do not differ much from the estimates from the first part of the assignment. 
 > - When comparing the mean and median values with the earlier case, the impact of imputing missing data on the estimates of the total daily number of steps appears to be very small in this case. 
@@ -176,6 +180,6 @@ Finally, using the 'Lattice' package, we make a time series plot of type = "l". 
 xyplot( steps ~ interval | Weekdays, data = dtComplete, type ="l", xlab ="Interval", ylab="Number of Steps", layout = c(1,2))
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
 
 As can be seen in the plot above, there's fair amount of increased activity during the week days as compared to weekends.

@@ -57,7 +57,9 @@ cat("Mean Total Number of Steps : ", meanSteps, "\n", "Median Total Number of St
 ```
 
 ## What is the average daily activity pattern?
-Here, we make a time series plot of type = "l" using basic plot system. We use the 5-minute interval as X-axis and the average number of steps taken, averaged across all days as Y-axis. 
+Here, we make a time series plot of type = "l" using basic plot system. We use the 5-minute interval as X-axis and the average number of steps taken, averaged across all days as Y-axis.
+
+The average daily activity pattern is as shown in the plot below.
 ```{r, echo = TRUE}
 # X axis <- 5 minute intervals for one day (0-2400)
 # Y axis <- average number of steps during that interval across all days. Use only complete cases.
@@ -65,6 +67,10 @@ dtMeanForInterval <- aggregate(formula = steps ~ interval, data = activityDataCo
 xLength <- length(dtMeanForInterval$interval)
 yLength <- length(dtMeanForInterval$steps)
 plot(dtMeanForInterval$interval, dtMeanForInterval$steps, type = "l", xlab = "5 Minute Intervals for One Day", ylab = "Avg Number of Steps Across All Days", col = "blue")
+```
+
+Next, we find the 5-minute time interval that has maximum number of steps averaged across all days.
+```{r, echo=TRUE}
 dtMaxSteps <- dtMeanForInterval[which.max(dtMeanForInterval$steps),]
 
 # This code simply formats the timestamp value to display in the answer.
